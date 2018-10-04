@@ -13,7 +13,9 @@ get_header();
 $the_post = get_post();
 $id = get_the_ID();
 ?>
+<div class="wrap">
      <?php echo do_shortcode(get_post_field('post_content', $id));?>
 <?php comments_template(); ?>
+</div>
 
 <?php get_footer(); ?>

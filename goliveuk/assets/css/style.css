@@ -795,6 +795,7 @@ pre[class*="language-"].line-numbers > code {
 
 div.code-toolbar {
     position: relative;
+    font-size: 15px;
 }
 
 div.code-toolbar > .toolbar {
