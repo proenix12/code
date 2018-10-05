@@ -9,6 +9,15 @@
     <title><?php bloginfo('name'); ?></title>
 </head>
 <body>
+<header>
+    <div class="header js-header js-dropdown">
+        <div class="container">
+            <div class="header_logo">dasdasdsa</div>
+            <div class="header__search"></div>
+            <div class="header__menu"></div>
+        </div>
+    </div>
+</header>
 <?php
 //Display menu
 //$leftMenu = array(

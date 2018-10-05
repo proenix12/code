@@ -238,31 +238,67 @@ get_header();
 //// Filters
 //// For more information on available Filters see: http://codex.wordpress.org/Class_Reference/WP_Query#Filters
 //);
+$getVar = $_GET['category'];
+$getVar = trim($getVar);
+$getVar = stripslashes($getVar);
+$getVar = htmlspecialchars($getVar);
+?>
+    <div class = "wrap">
+        <?php
+        $args = array(
+            'post_type'   => 'Project',
+            'post_status' => 'publish',
+            'category_name' => $getVar
+        );?>
+        <div class="post">
+            <div class="post_header clearfix">
+                    <div class="post_topic">Topic</div>
+                    <div class="post_category">Category</div>
+                    <div class="post_users">Users</div>
+                    <div class="post_replies">Replies</div>
+                    <div class="post_views">Views</div>
+                    <div class="post_activity">Activity</div>
+            </div>
+            <div class = "post_body">
+        <?php
 
+        $testimonials = new WP_Query( $args );
+        if ( $testimonials->have_posts() ) {
+            while ( $testimonials->have_posts() ) {
+                $testimonials->the_post(); ?>
 
-$args = array(
-    'post_type'   => 'Project',
-    'post_status' => 'publish'
-);
+                        <div class="post_header clearfix">
+                            <div class="post_topic"><h3><a href="<?php echo get_post_permalink();
+                            ?>"><?php the_title(); ?></a></h3></div>
+                            <div class="post_category"><?php
+                                $terms = get_terms('category');
+                                $count = count($terms);
+                                foreach ($terms as $term){
+                                    echo '<a href="'.esc_url( get_term_link($term) ).'?category='.$term->slug.'">'
+                                         .$term->slug
+                                         .'</a>';
+                                }
+                            ?></div>
+                            <div class="post_users">Users</div>
+                            <div class="post_replies">Replies</div>
+                            <div class="post_views">Views</div>
+                            <div class="post_activity">Activity</div>
+                        </div>
 
-$testimonials = new WP_Query( $args );
-if ( $testimonials->have_posts() ) {
-    while ( $testimonials->have_posts() ) {
-        $testimonials->the_post();
-
-echo get_permalink();
-echo get_the_title();
-        the_content();
+                <?php
+//echo get_permalink();
+//echo get_the_title();
+                //the_content();
 //        //the_excerpt();
 //        echo get_post_permalink();
-        //echo do_shortcode('[styles][/styles]');
-        comment_form();
-        ?><div class="comment list">
-    <?php wp_list_comments( array( 'style' => 'div' ) ); ?>
-</div><?php
-    }
-    wp_reset_postdata();
-}
+                //echo do_shortcode('[styles][/styles]');
+            }
+            wp_reset_postdata();
+        } ?>
+            </div>
+        </div>
+    </div>
+<?php
 
 //load footer section
 get_footer();

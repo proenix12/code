@@ -1,4 +1,5 @@
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+  html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
     border: 0;
     font-size: 100%;
     font-style: inherit;
@@ -22,12 +23,12 @@ ol, ul {
 }
 
 body {
-    font-size: 12px;
-    line-height: 1.5;
     list-style-type: none;
     overflow-x: hidden;
     width: 100%;
     margin: 0;
+    background-color: #f8f9fa;
+    font: 400 16px/24px Roboto,sans-serif;
 }
 
 table {
@@ -851,3 +852,195 @@ div.code-toolbar > .toolbar span:focus {
     text-decoration: none;
 }
 
+.post_header {
+    padding: 20px 0 20px 0;
+    font-size: 15px;
+}
+
+.post_body {
+    width: 100%;
+    border: solid 1px #f3f4f5;
+}
+.post_head, .post_item{
+    align-items: center;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+}
+.posts_item{
+    padding: 24px 0;
+}
+.post_topic{
+    width: 50%;
+    min-width: 50%;
+}
+.post_category, .post_users {
+    width: 13%;
+    min-width: 13%;
+}
+.post_replies, .post_views, .post_activity{
+    width: 8%;
+    min-width: 8%;
+}
+.post_topic, .post_category, .post_users, .post_replies, .post_views, .post_activity{
+    display: inline-block;
+    float: left;
+}
+.post_body > .post_header > .post_topic {
+    padding: 0 0 0 30px;
+}
+.post_body > .post_header:nth-child(even) {
+    background-color: #FFFFFF;
+}
+.topics__heading {
+    line-height: 28px;
+    margin-bottom: 38px;
+    text-rendering: optimizeLegibility;
+}
+.topics__heading-title {
+    box-sizing: border-box;
+    color: rgb(51, 51, 51);
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 30.4px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    text-rendering: optimizelegibility;
+}
+.topic_style, .comment, .comment-respond {
+    background-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(243, 244, 245);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-image-outset: 0;
+    border-image-repeat: stretch stretch;
+    border-image-slice: 100%;
+    border-image-source: none;
+    border-image-width: 1;
+    border-left-color: rgb(243, 244, 245);
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-color: rgb(243, 244, 245);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-color: rgb(243, 244, 245);
+    border-top-style: solid;
+    border-top-width: 1px;
+    box-sizing: border-box;
+    color: rgb(51, 51, 51);
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 16px;
+    line-height: 28px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+    text-rendering: optimizelegibility;
+}
+.comment {
+    word-break: break-all;
+    margin: 20px 0 20px 0;
+}
+header {
+    box-sizing: border-box;
+    color: rgb(51, 51, 51);
+    display: block;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 16px;
+    line-height: 28px;
+    text-rendering: optimizelegibility
+}
+.header{
+    background-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(233, 236, 238);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    box-sizing: border-box;
+    color: rgb(51, 51, 51);
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 16px;
+    line-height: 28px;
+    position: relative;
+    text-rendering: optimizelegibility
+}
+.container{
+    box-sizing: border-box;
+    color: rgb(51, 51, 51);
+    display: flex;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 16px;
+    justify-content: space-between;
+    line-height: 28px;
+    margin-left: 350.5px;
+    margin-right: 350.5px;
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    text-rendering: optimizelegibility;
+    width: 1202px;
+}
+.header_logo {
+    align-items: center;
+    border-right-color: rgb(233, 236, 238);
+    border-right-style: solid;
+    border-right-width: 1px;
+    box-sizing: border-box;
+    color: rgb(51, 51, 51);
+    display: flex;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 16px;
+    line-height: 28px;
+    padding-bottom: 30px;
+    padding-right: 56px;
+    padding-top: 30px;
+    position: relative;
+    text-rendering: optimizelegibility;
+    width: 170px;
+}
+.header__search{
+    align-items: center;
+    border-right-color: rgb(233, 236, 238);
+    border-right-style: solid;
+    border-right-width: 1px;
+    box-sizing: border-box;
+    color: rgb(51, 51, 51);
+    display: flex;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 16px;
+    line-height: 28px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+    position: relative;
+    text-rendering: optimizelegibility;
+    width: 594.6px;
+}
+.header__menu{
+    align-items: center;
+    box-sizing: border-box;
+    color: rgb(51, 51, 51);
+    display: flex;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 16px;
+    line-height: 28px;
+    min-width: 182px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 15px;
+    padding-top: 30px;
+    position: relative;
+    text-rendering: optimizelegibility;
+    width: 182px;
+}
+.comment-body {
+}
+.topics {
+    margin-top: 100px;
+}

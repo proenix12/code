@@ -11,6 +11,7 @@ function load_css_and_javascript () {
     //.min.css' );
 
     //load javascript files
+
     wp_enqueue_script( 'jquery' );
     // Compiled materialize minified JavaScript
     // wp_enqueue_scripts( 'materializejs', 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js' );
@@ -125,7 +126,7 @@ add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
 
 function css($atts = [], $content = null, $tag = ''){
     $atts = shortcode_atts( array(), $atts, 'css' );
-  return '<pre><code class="language-css line-numbers">'.$content.'</code></pre>';
+    return '<pre><code class="language-css line-numbers">'.$content.'</code></pre>';
 }
 add_shortcode( 'styles', 'css' ); //[styles][/styles]
 
@@ -247,5 +248,30 @@ function __THEME_PREFIX__wp_head() {
         });
     </script>
     <?php
+}
+
+function getPostViews($postID){
+    $count_key = 'post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+        return "0 View";
+    }
+    return $count;
+}
+
+// function to count views.
+function setPostViews($postID) {
+    $count_key = 'post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        $count = 0;
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+    }else{
+        $count++;
+        update_post_meta($postID, $count_key, $count);
+    }
 }
 ?>
